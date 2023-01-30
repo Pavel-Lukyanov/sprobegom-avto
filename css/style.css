@@ -240,6 +240,11 @@
     cursor: pointer;
 }
 
+.header__confirm__city.active {
+    visibility: visible;
+    opacity: 1;
+}
+
 .header__menu {
     display: flex;
     align-items: center;
@@ -281,6 +286,7 @@
     color: #FFFFFF;
     display: flex;
     align-items: center;
+    user-select: none;
 }
 
 .header__city__select::before {
@@ -312,15 +318,12 @@
     border-radius: 9px;
     padding: 22px 30px 31px;
     top: 33px;
-    left: 0;
+    left: -105px;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s;
-}
-
-.header__confirm__city.active {
-    visibility: visible;
-    opacity: 1;
+    z-index: 4;
+    width: 270px;
 }
 
 .header__city__text {
@@ -901,6 +904,7 @@
     line-height: 17px;
     color: var(--gray);
     border-bottom: 1px solid;
+    z-index: 1;
 }
 
 .form__checkbox label {
@@ -927,7 +931,88 @@
     bottom: 0;
     right: 0;
     height: 0;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 85, 99, 0.5);
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.popup__container {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 29px 50px 36px;
+    background-color: #fff;
+    width: 100%;
+    height: fit-content;
+    max-width: 635px;
+    border-radius: 9px;
+    margin: auto;
+    position: absolute;
+}
+
+.popup__content::-webkit-scrollbar-track {
+	background-color: rgb(230, 230, 230); /*Цвет скролла*/
+} 
+.popup__content::-webkit-scrollbar-thumb { 
+	border-radius: 5px;
+	background-color: rgb(153, 153, 153)
+} 
+.popup__content::-webkit-scrollbar { 
+	width: 3px;
+}
+
+.popup__content {
+    overflow-y: auto;
+    height:fit-content;
+    padding-right: 20px;
+    max-height: 80vh;
+}
+
+.popup__head {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 27px;
+    user-select: none;
+}
+
+.popup__list li a {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--black);
+}
+
+.popup__list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, max-content);
+    row-gap: 21px;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+.popup__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.popup.active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .title--filter {
