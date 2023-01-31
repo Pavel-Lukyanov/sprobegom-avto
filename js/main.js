@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     selectCityBtn.addEventListener('click', function (e) {
-        console.log(e.target)
         if (e.target.classList.contains('header__city__select') || e.target.classList.contains('header__city__rectangle')) {
             selectCityPopup.classList.add('active');
         }
@@ -126,4 +125,48 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+
+    //Селект в каталоге
+    let selectCatalog = document.querySelector('.select__catalog');
+    if (selectCatalog) {
+        selectCatalog.addEventListener('click', () => {
+            selectCatalog.classList.toggle('active');
+        })
+
+        //Закрытие селекта при клике вне него
+        document.addEventListener('click', (e) => {
+            const withinCatalogSelect = e.composedPath().includes(selectCatalog);
+            if (!withinCatalogSelect) {
+                selectCatalog.classList.remove('active');
+            }
+        })
+
+        let selectCatalogLinks = document.querySelectorAll('.select__catalog__link');
+        let selectCatalogHead = document.querySelector('.select__catalog__title');
+
+        selectCatalogLinks.forEach(el => {
+            el.addEventListener('click', () => {
+                selectCatalogHead.textContent = el.textContent;
+            })
+        })
+    }
+
+    //Маска телефона
+    var selector = document.querySelectorAll("input[type='tel']");
+    var im = new Inputmask("+7 (999)-999-99-99");
+
+    im.mask(selector);
+
+
+    // Инициализация свайперов в каталоге
+    new Swiper('.catalog-swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        lazy: true,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
 })

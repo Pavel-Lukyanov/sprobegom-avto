@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprobegom Avto</title>
+    <link href="./css/normalize.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <script defer src="./js/inputmask.min.js"></script>
+    <script defer src="./js/swiper.min.js"></script>
+    <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="/" class="header__logo"></a>
+            <div class="header__menu">
+                <nav class="header__nav">
+                    <ul class="js-transfer-menu-from">
+                        <li>
+                            <a href="#">
+                                Каталог
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Trade-in
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Выкуп
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Оценка
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Автокредит
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Контакты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Седьмой пункт меню
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Восьмой пункт меню
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Девятый пункт меню
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Десятый пункт меню
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Одинадцатый пункт меню
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="header__btn--menu"></button>
+            </div>
+            <div class="header__right">
+                <div class="header__city">
+                    <span class="header__city__select">
+                        Сургут
+                        <span class="header__city__rectangle"></span>
+                    </span>
+                    <div class="header__confirm__city js-accept-city active">
+                        <p class="header__city__text">
+                            Ваш город Сургут?
+                        </p>
+                        <div class="header__city__buttons">
+                            <button class="header__city__accept">
+                                Да, верно
+                            </button>
+                            <button class="header__city__deny">
+                                Нет, другой
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <a href="" class="header__phone js-autocomplite__link">
+                    +7 (3466) 31-44-44
+                </a>
+            </div>
+        </div>
+        <div class="dropdown__menu">
+            <nav class="dropdown__nav">
+                <ul class="js-transfer-menu-to">
+
+                </ul>
+            </nav>
+            <div class="separation"></div>
+            <div class="header__city">
+                <span class="header__city__select">
+                    Сургут
+                    <span class="header__city__rectangle"></span>
+                </span>
+                <div class="header__confirm__city js-accept-city active">
+                    <p class="header__city__text">
+                        Ваш город Сургут?
+                    </p>
+                    <div class="header__city__buttons">
+                        <button class="header__city__accept">
+                            Да, верно
+                        </button>
+                        <button class="header__city__deny">
+                            Нет, другой
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <address class="footer__address">
+                ​<b>Сургут,</b> Авиаторов, 25/1
+            </address>
+        </div>
+    </header>
+    <nav class="container breadcrumbs">
+        <ul>
+            <li>
+                <a href="/">Главная</a>
+            </li>
+            <span>Каталог</span>
+        </ul>
+    </nav>
+    <main class="main">
+        <h1 class="container main__title">
+            Каталог
+        </h1>
+        <section class="container catalog">
+            <div class="catalog__count">
+                <p>
+                    Найдено автомобилей: <span class="catalog__count--color">26</span>
+                </p>
+                <div class="select__catalog">
+                    <div class="select__catalog__title">
+                        По умолчанию
+                    </div>
+                    <ul class="select__catalog__dropdown">
+                        <li>
+                            <a href="#" class="select__catalog__link">
+                                По умолчанию
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="select__catalog__link">
+                                Сначала новые
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="select__catalog__link">
+                                Сначала старые
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="select__catalog__link">
+                                Сначала дорогие
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="select__catalog__link">
+                                Сначала дешевые
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="catalog__cars">
+                <div class="catalog__item">
+                    <div class="catalog__label__container">
+                        <label class="catalog__label stock">
+                            в наличии
+                        </label>
+                        <label class="catalog__label sale">
+                            -11 %
+                        </label>
+                    </div>
+                    <div class="catalog-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="swiper-lazy siper__img" data-src="./img/catalog_car.png" alt="Машина">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="swiper-lazy siper__img" data-src="https://img1.akspic.ru/crops/1/6/4/8/6/168461/168461-vash_nacionalnyj_les-les-priroda-voda-atmosfera-3840x2160.jpg" alt="Машина">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="swiper-lazy siper__img" data-src="./img/catalog_car.png" alt="Машина">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="catalog__title">
+                        Ford Fusion I Рестайлинг 2007
+                    </h2>
+                    <p class="catalog__descr">
+                        1.4 MT (80 л.с.) / Механика
+                    </p>
+                    <div class="catalog__price__container">
+                        <span class="old__price">
+                            385 500 ₽
+                        </span>
+                        <div class="catalog__price">
+                            359 000 ₽
+                            <span class="catalog__credit">
+                                от 9500 ₽/мес
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container showrooms">
+            <h2 class="title">
+                Наши автосалоны
+            </h2>
+            <div class="showrooms__content">
+                <h3>Где мы находимя</h3>
+                <p>
+                    Воспользовавшись сайтом нашего автосалона вы можете оставить свою заявку на выгодный обмен своего
+                    транспортного средства. В день оформления сделки на покупку или продажу авто с пробегом в автосалоне
+                    «Sprobegomavto» вы можете пройти тест-драйв. Выгодное сотрудничество с «Sprobegomavto» включает:
+                </p>
+                <ul>
+                    <li>
+                        Срочный выкуп авто;
+                    </li>
+                    <li>
+                        Покупку залоговых и кредитных автомобилей;
+                    </li>
+                    <li>
+                        Выгодные ставки по автокредиту;
+                    </li>
+                    <li>
+                        Оценка авто согласно рыночной стоимости;
+                    </li>
+                    <li>
+                        Любой удобный вид расчета;
+                    </li>
+                    <li>
+                        Большой выбор марок;
+                    </li>
+                    <li>
+                        Полный комплекс сопроводительных услуг;
+                    </li>
+                    <li>
+                        Комиссионная продажа вашего автомобиля;
+                    </li>
+                </ul>
+                <p>
+                    Сотрудничая с нами, вы сэкономите массу времени, сил и средств, а также избавите себя от волокиты с
+                    юридическими документами. Обратитесь к нам и мы поможем вам выгодно продать или приобрести любой
+                    автомобиль с пробегом.
+                </p>
+            </div>
+        </section>
+        <section class="discount">
+            <div class="discount__container">
+                <div class="discount__content">
+                    <h2>
+                        Дополнительная
+                        дилерская скидка
+                    </h2>
+                    <p>
+                        Сэкономьте до <b>100 000 руб.</b> оставив заявку на подбор автомобиля
+                    </p>
+                    <form action="#" method="post">
+                        <div class="form__content">
+                            <div class="select">
+                                <input type="text" value="Сургут">
+                            </div>
+                            <input type="tel" placeholder="Ваш телефон">
+                            <button class="form__submit" type="submit">
+                                Подобрать авто
+                            </button>
+                            <div class="form__checkbox">
+                                <input id="agree" type="checkbox" name="agree" aria-label="Чекбокс">
+                                <span class="form__checkbox__span"></span>
+                                <label for="agree"> я согласен с
+                                    <a target="_blank" href="#">
+                                        условиями обработки персональных данных
+                                    </a>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="popup js-popup-city">
+        <div class="popup__container">
+            <div class="popup__content">
+                <h3 class="popup__head">
+                    Выберите город
+                </h3>
+                <ul class="popup__list">
+                    <li>
+                        <a href="#">
+                            Сургут
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Сургут
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Сургут
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Нижневартовск
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Нижневартовск
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Нижневартовск
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Челябинск
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Челябинск
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Челябинск
+                        </a>
+                    </li>
+                </ul>
+                <button class="popup__close">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.28261 7.0001L13.7339 1.54851C14.0887 1.1939 14.0887 0.620557 13.7339 0.265953C13.3793 -0.0886509 12.806 -0.0886509 12.4514 0.265953L6.99992 5.71755L1.5486 0.265953C1.19384 -0.0886509 0.620668 -0.0886509 0.266072 0.265953C-0.0886906 0.620557 -0.0886906 1.1939 0.266072 1.54851L5.71739 7.0001L0.266072 12.4517C-0.0886906 12.8063 -0.0886906 13.3797 0.266072 13.7343C0.442789 13.9111 0.675145 14 0.907335 14C1.13953 14 1.37172 13.9111 1.5486 13.7343L6.99992 8.28266L12.4514 13.7343C12.6283 13.9111 12.8605 14 13.0927 14C13.3249 14 13.557 13.9111 13.7339 13.7343C14.0887 13.3797 14.0887 12.8063 13.7339 12.4517L8.28261 7.0001Z"
+                            fill="#9CA3AF" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container footer__container">
+            <a href="/" class="footer__logo"></a>
+            <div class="footer__columns__container">
+                <nav class="footer__nav">
+                    <h4 class="footer__title">
+                        Автосалоны
+                    </h4>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">
+                                Каталог авто
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Отзывы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Адреса салонов
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer__nav">
+                    <h4 class="footer__title">
+                        Купить
+                    </h4>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">
+                                Купить авто
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Trade in
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Оценка авто
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer__nav">
+                    <h4 class="footer__title">
+                        Продать
+                    </h4>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">
+                                Выкуп авто
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Продажа через нас
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Оценка авто
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer__nav">
+                    <h4 class="footer__title">
+                        Автокредит
+                    </h4>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#">
+                                Автокредит
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__contacts">
+                <h4 class="footer__title">
+                    Контакты
+                </h4>
+                <a href="" class="footer__phone js-autocomplite__link">
+                    +7 (346) 631-44-44
+                </a>
+                <ul class="footer__list__address">
+                    <li>
+                        <address class="footer__address">
+                            ​<b>Сургут,</b> Авиаторов, 25/1
+                        </address>
+                    </li>
+                    <li>
+                        <address class="footer__address">
+                            ​<b>​Нижневартовск,</b> Авиаторов, 25/1
+                        </address>
+                    </li>
+                    <li>
+                        <address class="footer__address">
+                            ​<b>Челябинск,</b> Ленина, 14/1
+                        </address>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="separation"></div>
+        <div class="container footer__bottom">
+            <p>
+                Данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является
+                публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ. Для получения подробной
+                информации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста, обращайтесь к менеджерам
+                автосалона.
+            </p>
+            <p>
+                Отправляя личные данные пользватель соглашается с <a href="#" class="footer__politics">политикой
+                    обработки персональных данных</a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
