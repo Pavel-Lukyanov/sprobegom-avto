@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    //Selects
+    //Селекты
 
     let selects = document.querySelectorAll('.select');
 
@@ -88,6 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (e.target.classList.contains('select__title') || e.target.classList.contains('select__header')) {
                     el.classList.toggle('active');
                 }
+            })
+
+            //Закрытие селекта при клике вне него
+            document.addEventListener('click', (e) => {
+                const withinBoundaries = e.composedPath().includes(el);
+                if (!withinBoundaries) {
+                    el.classList.remove('active');
+                }
+            })
+        })
+
+        //Подстановка выбранного имени
+        let labels = document.querySelectorAll('.select__label');
+        labels.forEach(el => {
+            el.addEventListener('click', function () {
+                el.parentNode.parentNode.previousSibling.previousSibling.childNodes[3].textContent = el.textContent.trim();
+                el.parentNode.parentNode.previousSibling.previousSibling.childNodes[1].classList.add('active');
+                el.parentNode.parentNode.parentNode.classList.add('color');
             })
         })
     }
