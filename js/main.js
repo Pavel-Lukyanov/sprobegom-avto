@@ -47,4 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
             el.href = 'tel:' + phone;
         })
     }
+
+    //Бургер меню
+    let buttonBurger = document.querySelector('.header__btn--menu');
+    let menuContainer = document.querySelector('.dropdown__menu');
+
+    buttonBurger.addEventListener('click', () => {
+        menuContainer.classList.toggle('active');
+    })
 })
