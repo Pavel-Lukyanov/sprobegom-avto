@@ -1078,7 +1078,7 @@
 .select.active {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom: none;
+    border-bottom: 1px solid #BFDBFE;
 }
 
 .select__header {
@@ -1131,15 +1131,38 @@
     position: absolute;
     background: #EFF6FF;
     border: 1px solid #BFDBFE;
-    width: 100%;
+    width: 100.5%;
     box-sizing: border-box;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
     border-top: none;
-    left: 0;
+    left: -1px;
     right: 0;
 }
 
+.form__filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.select__label {
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.select__label:hover {
+    color: var(--blue);
+}
+
+.select__input {
+    display: none;
+}
+
+.select__input:checked~.select__label {
+    color: var(--blue);
+}
 
 .footer__logo {
     background-color: transparent;
