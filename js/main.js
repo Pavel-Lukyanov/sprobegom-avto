@@ -55,4 +55,40 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonBurger.addEventListener('click', () => {
         menuContainer.classList.toggle('active');
     })
+
+    //Перенос лишних пунктов меню в скрытое меню
+    let mainMenu = document.querySelector('.js-transfer-menu-from');
+    let elemMainMenu = mainMenu.querySelectorAll('li');
+
+    if (window.innerWidth > 1100) {
+        if (elemMainMenu.length > 6) {
+            let dropDownMenu = document.querySelector('.js-transfer-menu-to');
+
+            for (let i = 6; i < elemMainMenu.length; i++) {
+                dropDownMenu.innerHTML += `<li>${elemMainMenu[i].innerHTML}</li>`;
+                elemMainMenu[i].remove();
+            }
+        }
+    } else {
+        let dropDownMenu = document.querySelector('.js-transfer-menu-to');
+
+        elemMainMenu.forEach(el => {
+            dropDownMenu.innerHTML += `<li>${el.innerHTML}</li>`;
+        })
+    }
+
+
+    //Selects
+
+    let selects = document.querySelectorAll('.select');
+
+    if (selects.length > 0) {
+        selects.forEach(el => {
+            el.addEventListener('click', function (e) {
+                if (e.target.classList.contains('select__title') || e.target.classList.contains('select__header')) {
+                    el.classList.toggle('active');
+                }
+            })
+        })
+    }
 })
