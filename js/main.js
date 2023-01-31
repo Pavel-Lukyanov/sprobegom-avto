@@ -109,4 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+    // Цена от и до 
+
+    let priceInputs = document.querySelectorAll('.price__input');
+
+    if (priceInputs.length > 0) {
+        priceInputs.forEach(el => {
+            el.addEventListener('focus', function (e) {
+                e.target.previousSibling.previousSibling.classList.add('active');
+            })
+            el.addEventListener('blur', function (e) {
+                if (el.value === '') {
+                    e.target.previousSibling.previousSibling.classList.remove('active');
+                }
+            })
+        })
+    }
 })
