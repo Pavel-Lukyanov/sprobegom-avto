@@ -187,37 +187,9 @@
     right: 0;
     background-color: var(--gray);
     z-index: 3;
-    padding: 29px 15px;
     transition: 0.3s;
     height: fit-content;
     padding: 29px 30px;
-}
-
-.dropdown__menu.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.dropdown__nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 27px;
-}
-
-.dropdown__nav ul li a {
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    color: var(--white);
-}
-
-.header__city {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
 }
 
 :root {
@@ -1185,6 +1157,26 @@
     margin-bottom: 20px;
 }
 
+.dropdown__nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 27px;
+}
+
+.dropdown__nav ul li a {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--white);
+}
+
+.dropdown__menu.active {
+    visibility: visible;
+    opacity: 1;
+}
 
 .footer__bottom p {
     max-width: 860px;
@@ -1263,7 +1255,32 @@
 
 @media(max-width: 1100px) {
 
-    
+    /* .dropdown__nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 27px;
+    }
+
+    .dropdown__nav ul li a {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: var(--white);
+    }
+
+    .dropdown__menu.active {
+        visibility: visible;
+        opacity: 1;
+    } */
+
+    .header__city {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 
     .header__container {
         grid-template-columns: 1fr 1fr 1fr;
@@ -1296,7 +1313,7 @@
         display: none;
     }
 
-    .dropdown__menu .header__confirm__city {
+    .header__confirm__city {
         position: static;
         width: 100%;
         max-width: 330px;
@@ -1398,6 +1415,10 @@
 }
 
 @media(max-width: 768px) {
+
+    .dropdown__menu {
+        padding: 29px 15px;
+    }
 
     .form__checkbox {
         grid-column: 1/1;
