@@ -160,13 +160,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Инициализация свайперов в каталоге
-    new Swiper('.catalog-swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        lazy: true,
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-    });
+
+    function swiperInit() {
+        let swipers = document.querySelectorAll(`[data-start = "catalog-swiper"]`);
+
+        swipers.forEach(el => {
+            new Swiper(el, {
+                direction: 'horizontal',
+                preloadImages: false,
+                lazy: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    afterInit: function () {
+                        el.removeAttribute("data-start");
+                    },
+                },
+            });
+        })
+    }
+
+    swiperInit();
 })

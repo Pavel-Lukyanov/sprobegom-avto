@@ -1626,6 +1626,7 @@
 .select__catalog.active>.select__catalog__dropdown {
     visibility: visible;
     opacity: 1;
+    z-index: 3;
 }
 
 .select__catalog__dropdown {
@@ -1672,18 +1673,18 @@
     width: 100%;
     max-width: 415px;
     overflow: hidden;
-    margin-bottom: 23px;
+    border-radius: 13px 13px 0 0;
 }
 
-.siper__img {
+.swiper__img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 13px 13px 0 0;
 }
 
 .catalog__item {
     position: relative;
+    border-radius: 13px;
 }
 
 .catalog__label__container {
@@ -1739,6 +1740,90 @@
     column-gap: 25px;
     row-gap: 40px;
 }
+
+.car__info__container {
+    padding: 23px 20px 34px;
+    border: 1px solid #D1D5DB;
+    border-top: none;
+    border-radius: 0 0 13px 13px;
+}
+
+.catalog__title {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #1F2937;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.catalog__descr {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6B7280;
+    margin-bottom: 40px;
+}
+
+.catalog__price__container {
+    position: relative;
+}
+
+.old__price {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: line-through;
+    color: #6B7280;
+}
+
+.catalog__price {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2937;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.catalog__credit {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1F2937;
+    background: #EFF6FF;
+    border-radius: 9px;
+    padding: 5px 13px;
+}
+
+.swiper-pagination-bullet {
+    background: #FFFFFF;
+    opacity: 0.5;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    max-width: 50px; 
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.swiper-lazy-preloader{animation:swiper-preloader-spin 1s infinite linear}
 
 @media(max-width: 1700px) {
     .hero__content {
