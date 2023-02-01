@@ -51,11 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Бургер меню
     let buttonBurger = document.querySelector('.header__btn--menu');
-    let menuContainer = document.querySelector('.dropdown__menu');
+    let header = document.querySelector('.header');
 
     buttonBurger.addEventListener('click', () => {
-        menuContainer.classList.toggle('active');
+        acceptCityContainer.classList.toggle('zindex');
+        header.classList.toggle('active');
     })
+
+    
 
     //Перенос лишних пунктов меню в скрытое меню
     let mainMenu = document.querySelector('.js-transfer-menu-from');
