@@ -2275,6 +2275,10 @@
 
 @media(max-width: 600px) {
 
+    .select__catalog {
+        max-width: 100%;
+    }
+
     .catalog__label {
         font-size: 10px;
         padding: 3px 6px;
