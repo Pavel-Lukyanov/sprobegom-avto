@@ -186,7 +186,7 @@
     left: 0;
     right: 0;
     background-color: var(--gray);
-    z-index: 3;
+    z-index: 12;
     transition: 0.3s;
     height: fit-content;
     padding: 29px 30px;
@@ -1481,6 +1481,12 @@
     margin-bottom: 31px;
 }
 
+.catalog__separation {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #F5F5F5;
+}
+
 .footer__bottom {
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -1535,6 +1541,8 @@
 
 .catalog__count {
     display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 34px;
@@ -1553,6 +1561,79 @@
 
 .catalog__count--color {
     color: var(--yellow);
+}
+
+.catalog {
+    margin-bottom: 80px;
+}
+
+.catalog__more {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1F2937;
+    padding: 21px 148px;
+    background-color: var(--yellow);
+    border-radius: 7px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 90px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 434px;
+    white-space: nowrap;
+}
+
+.catalog__more::after {
+    content: '';
+    background-color: transparent;
+    background-image: url(../img/svg/load_more.svg);
+    background-repeat: no-repeat;
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+.anim__button {
+    position: relative;
+}
+
+.anim__button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(100, 100);
+    }
+}
+
+.anim__button:focus:not(:active)::before {
+    animation: ripple 1s ease-in-out;
 }
 
 .select__catalog {
@@ -1672,7 +1753,6 @@
     position: relative;
     height: 290px;
     width: 100%;
-    max-width: 415px;
     overflow: hidden;
     border-radius: 13px 13px 0 0;
 }
@@ -1681,6 +1761,10 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.swiper-wrapper {
+    max-width: 0;
 }
 
 .catalog__item {
@@ -1694,6 +1778,7 @@
     left: 20px;
     z-index: 2;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -1740,6 +1825,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 25px;
     row-gap: 40px;
+    margin-bottom: 40px;
 }
 
 .car__info__container {
@@ -1797,6 +1883,7 @@
     display: flex;
     align-items: center;
     gap: 17px;
+    flex-wrap: wrap;
 }
 
 .catalog__credit {
@@ -1811,21 +1898,67 @@
     padding: 5px 13px;
 }
 
-.swiper-pagination-bullet {
+.catalog-swiper .swiper-pagination-bullet {
     background: #FFFFFF;
     opacity: 0.5;
     border-radius: 1px;
     height: 2px;
     width: 100%;
     max-width: 50px;
+    background-color: transparent;
+    opacity: 1;
+    height: 290px;
+    position: relative;
+    cursor: default;
 }
 
-.swiper-pagination-bullet-active {
+.catalog-swiper .swiper-pagination-bullet::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border-radius: 1px;
+    opacity: 0.7;
+    z-index: -99;
+}
+
+.catalog-swiper .swiper-pagination-bullet-active {
+    background: #FFFFFF;
+    opacity: 0.5;
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    max-width: 50px;
+    background-color: transparent;
+    opacity: 1;
+    height: 290px;
+    position: relative;
+}
+
+.catalog-swiper .swiper-pagination-bullet-active::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #ffffff !important;
+    z-index: -99;
+    border-radius: 1px;
     opacity: 1;
 }
 
 .swiper-lazy-preloader {
     animation: swiper-preloader-spin 1s infinite linear;
+}
+
+.swiper-pagination-custom {
+    display: flex;
+    justify-content: center;
 }
 
 @media(max-width: 1700px) {
@@ -1971,6 +2104,10 @@
 }
 
 @media(max-width: 900px) {
+
+    .catalog__cars {
+        grid-template-columns: 1fr 1fr;
+    }
 
     .discount {
         background-image: url(../img/discount_mobile.png);
@@ -2138,6 +2275,42 @@
 
 @media(max-width: 600px) {
 
+    .catalog__label {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    .stock::before {
+        width: 9px;
+        height: 9px;
+        background-size: 9px;
+    }
+
+    .catalog__more {
+        padding: 21px 25px;
+    }
+
+    .old__price {
+        font-size: 12px;
+        top: -12px;
+    }
+
+    .catalog-swiper {
+        height: 240px;
+    }
+
+    .car__info__container {
+        padding: 14px 15px 22px;
+    }
+
+    .catalog__credit {
+        font-size: 14px;
+        padding: 5px 5px;
+    }
+
+    .catalog__cars {
+        grid-template-columns: 1fr;
+    }
 
     .footer__columns__container {
         width: 100%;

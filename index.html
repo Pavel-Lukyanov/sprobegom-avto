@@ -8,6 +8,7 @@
     <title>Sprobegom Avto</title>
     <link href="./css/normalize.css" rel="stylesheet" type="text/css">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <script defer src="./js/lazyload.js"></script>
     <script defer src="./js/inputmask.min.js"></script>
     <script defer src="./js/main.js"></script>
 </head>
@@ -136,8 +137,8 @@
     </header>
     <main class="main">
         <section class="hero">
-            <img class="hero__desktop" src="./img/hero.png" alt="Main Banner">
-            <img class="hero__mobile" src="./img/hero_mobile.png" alt="Main Banner">
+            <img class="hero__desktop lazyload" data-src="./img/hero.png" alt="Main Banner">
+            <img class="hero__mobile lazyload" data-src="./img/hero_mobile.png" alt="Main Banner">
             <div class="hero__content">
                 <h1 class="hero__head">
                     Более 300 авто с пробегом
@@ -708,31 +709,31 @@
             </h2>
             <ul class="banks__container">
                 <li>
-                    <img src="./img/kia_bank.png" alt="Kia Банк">
+                    <img class="lazyload" data-src="./img/kia_bank.png" alt="Kia Банк">
                 </li>
                 <li>
-                    <img src="./img/setelem_bank.png" alt="Сетелем Банк">
+                    <img class="lazyload" data-src="./img/setelem_bank.png" alt="Сетелем Банк">
                 </li>
                 <li>
-                    <img src="./img/zenit_bank.png" alt="Банк Зенит">
+                    <img class="lazyload" data-src="./img/zenit_bank.png" alt="Банк Зенит">
                 </li>
                 <li>
-                    <img src="./img/ros_bank.png" alt="РосБанк">
+                    <img class="lazyload" data-src="./img/ros_bank.png" alt="РосБанк">
                 </li>
                 <li>
-                    <img src="./img/vtb_bank.png" alt="ВТБ Банк">
+                    <img class="lazyload" data-src="./img/vtb_bank.png" alt="ВТБ Банк">
                 </li>
                 <li>
-                    <img src="./img/quickly_bank.png" alt="БытроБанк">
+                    <img class="lazyload" data-src="./img/quickly_bank.png" alt="БытроБанк">
                 </li>
                 <li>
-                    <img src="./img/alpha_bank.png" alt="Альфа Банк">
+                    <img class="lazyload" data-src="./img/alpha_bank.png" alt="Альфа Банк">
                 </li>
                 <li>
-                    <img src="./img/open_bank.png" alt="Банк Открытие">
+                    <img class="lazyload" data-src="./img/open_bank.png" alt="Банк Открытие">
                 </li>
                 <li>
-                    <img src="./img/otp_bank.png" alt="ОТП Банк">
+                    <img class="lazyload" data-src="./img/otp_bank.png" alt="ОТП Банк">
                 </li>
             </ul>
         </section>

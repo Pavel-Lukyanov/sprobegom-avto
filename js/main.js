@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    lazyload();
 
     //Выбор и подтверждение города
     let selectCityBtn = document.querySelector('.header__city');
@@ -165,12 +167,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let swipers = document.querySelectorAll(`[data-start = "catalog-swiper"]`);
 
         swipers.forEach(el => {
-            new Swiper(el, {
+            let swip = new Swiper(el, {
                 direction: 'horizontal',
                 preloadImages: false,
                 lazy: true,
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.swiper-pagination-custom',
                     clickable: true,
                 },
                 on: {
@@ -183,4 +185,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     swiperInit();
+
+    let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
+
+    paginationSwiper.forEach(el => {
+        el.addEventListener('mouseover', () => {
+            el.click();
+        })
+    })
+
+
+
 })
