@@ -202,6 +202,7 @@
     --grayDB: #D1D5DB;
     --grayAF: #9CA3AF;
     --whiteF6: #F3F4F6;
+    --swiper-theme-color: #FCD34D;
 }
 
 .container {
@@ -1816,14 +1817,16 @@
     border-radius: 1px;
     height: 2px;
     width: 100%;
-    max-width: 50px; 
+    max-width: 50px;
 }
 
 .swiper-pagination-bullet-active {
     opacity: 1;
 }
 
-.swiper-lazy-preloader{animation:swiper-preloader-spin 1s infinite linear}
+.swiper-lazy-preloader {
+    animation: swiper-preloader-spin 1s infinite linear;
+}
 
 @media(max-width: 1700px) {
     .hero__content {
