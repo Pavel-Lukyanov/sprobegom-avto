@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     lazyload();
 
     //Выбор и подтверждение города
@@ -186,13 +186,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     swiperInit();
 
-    let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
+    if (window.innerWidth > 1100) {
+        let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
 
-    paginationSwiper.forEach(el => {
-        el.addEventListener('mouseover', () => {
-            el.click();
+        paginationSwiper.forEach(el => {
+            el.addEventListener('mouseover', () => {
+                el.click();
+            })
         })
-    })
+    }
 
 
 
