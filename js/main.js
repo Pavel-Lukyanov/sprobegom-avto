@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     swiperInit();
 
-    if (window.innerWidth > 1100) {
+    /* if (window.innerWidth > 1100) { */
         let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
 
         paginationSwiper.forEach(el => {
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 el.click();
             })
         })
-    }
+    /* } */
 
 
 
