@@ -135,8 +135,10 @@ document.addEventListener('DOMContentLoaded', function () {
     //Селект в каталоге
     let selectCatalog = document.querySelector('.select__catalog');
     if (selectCatalog) {
-        selectCatalog.addEventListener('click', () => {
-            selectCatalog.classList.toggle('active');
+        selectCatalog.addEventListener('click', (e) => {
+            if (e.target.classList.contains('select__catalog') || e.target.classList.contains('select__catalog__title')) {
+                selectCatalog.classList.toggle('active');
+            }
         })
 
         //Закрытие селекта при клике вне него
@@ -156,6 +158,37 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+
+    // Селект в футере
+    let selectCity = document.querySelector('.select__discount');
+
+    if (selectCity) {
+        selectCity.addEventListener('click', function (e) {
+            if (e.target.classList.contains('select__discount') || e.target.classList.contains('select__discount__title')) {
+                selectCity.classList.toggle('active');
+            }
+        })
+
+        let selectLabelCity = document.querySelectorAll('.select__discount__label');
+        let selectTitleCity = document.querySelector('.select__discount__title');
+
+        selectLabelCity.forEach(el => {
+            el.addEventListener('click', function () {
+                selectTitleCity.textContent = el.textContent;
+                selectCity.classList.remove('active');
+            })
+        })
+
+        //Закрытие селекта при клике вне него
+        document.addEventListener('click', (e) => {
+            const withinCatalogSelect = e.composedPath().includes(selectCity);
+            if (!withinCatalogSelect) {
+                selectCity.classList.remove('active');
+            }
+        })
+    }
+
 
     //Маска телефона
     var selector = document.querySelectorAll("input[type='tel']");

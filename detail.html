@@ -160,8 +160,7 @@
                         <div class="swiper detail-swiper2">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img class="swiper-lazy"
-                                        data-src="./img/detail_car.png" />
+                                    <img class="swiper-lazy" data-src="./img/detail_car.png" />
                                     <div class="swiper-lazy-preloader"></div>
                                 </div>
                                 <div class="swiper-slide">
@@ -183,8 +182,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="swiper-lazy-preloader"></div>
-                                    <img class="swiper-lazy"
-                                        data-src="./img/detail_car.png" />
+                                    <img class="swiper-lazy" data-src="./img/detail_car.png" />
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="swiper-lazy-preloader"></div>
@@ -792,8 +790,31 @@
                     </p>
                     <form action="#" method="post">
                         <div class="form__content">
-                            <div class="select">
-                                <input type="text" value="Сургут">
+                            <div class="select__discount">
+                                <div class="select__discount__title">
+                                    Сургут
+                                </div>
+                                <ul class="select__discount__dropdown">
+                                    <li>
+                                        <input class="select__discount__input" type="radio" name="city" id="surgut">
+                                        <label class="select__discount__label" for="surgut">
+                                            Сургут
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input class="select__discount__input" type="radio" name="city"
+                                            id="Нижневартовск">
+                                        <label class="select__discount__label" for="Нижневартовск">
+                                            Нижневартовск
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input class="select__discount__input" type="radio" name="city" id="Челябинск">
+                                        <label class="select__discount__label" for="Челябинск">
+                                            Челябинск
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
                             <input type="tel" placeholder="Ваш телефон">
                             <button class="form__submit" type="submit">
