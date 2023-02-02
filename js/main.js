@@ -201,29 +201,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Свайпер на детальной
 
-    let detailSwiper = new Swiper(".detail-swiper", {
-        spaceBetween: 10,
-        slidesPerView: 7,
-        watchSlidesProgress: true,
-        preloadImages: true,
-        lazy: true,
-    });
-    let detailSwiper2 = new Swiper(".detail-swiper2", {
-        slidesPerView: 1,
-        centeredSlides: true,
-        preloadImages: true,
-        lazy: true,
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-            swiper: detailSwiper,
-        },
-    });
+    try {
+        let detailSwiper = new Swiper(".detail-swiper", {
+            spaceBetween: 10,
+            slidesPerView: 7,
+            watchSlidesProgress: true,
+            preloadImages: true,
+            lazy: true,
+        });
+        let detailSwiper2 = new Swiper(".detail-swiper2", {
+            slidesPerView: 1,
+            centeredSlides: true,
+            preloadImages: true,
+            lazy: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: detailSwiper,
+            },
+        });
+    } catch { }
 
 })

@@ -1613,6 +1613,7 @@
 
 .anim__button {
     position: relative;
+    overflow: hidden;
 }
 
 .anim__button::before {
@@ -2629,6 +2630,18 @@
 }
 
 @media(max-width: 600px) {
+
+    .swiper-button-prev-detail::after {
+        background-size: 11px 22px;
+        width: 11px;
+        height: 22px;
+    }
+
+    .swiper-button-next-detail::after {
+        background-size: 11px 22px;
+        width: 11px;
+        height: 22px;
+    }
 
     .detail__info {
         max-width: 100%;
