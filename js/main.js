@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         header.classList.toggle('active');
     })
 
-    
+
 
     //Перенос лишних пунктов меню в скрытое меню
     let mainMenu = document.querySelector('.js-transfer-menu-from');
@@ -189,16 +189,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
     swiperInit();
 
-    /* if (window.innerWidth > 1100) { */
-        let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
 
-        paginationSwiper.forEach(el => {
-            el.addEventListener('mouseover', () => {
-                el.click();
-            })
+    let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
+
+    paginationSwiper.forEach(el => {
+        el.addEventListener('mouseover', () => {
+            el.click();
         })
-    /* } */
+    })
 
 
+    // Свайпер на детальной
+
+    let detailSwiper = new Swiper(".detail-swiper", {
+        spaceBetween: 10,
+        slidesPerView: 7,
+        watchSlidesProgress: true,
+        preloadImages: true,
+        lazy: true,
+    });
+    let detailSwiper2 = new Swiper(".detail-swiper2", {
+        slidesPerView: 1,
+        centeredSlides: true,
+        preloadImages: true,
+        lazy: true,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: detailSwiper,
+        },
+    });
 
 })

@@ -1278,6 +1278,7 @@
 
 .breadcrumbs ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -1313,6 +1314,10 @@
     font-size: 48px;
     line-height: 59px;
     color: var(--black);
+}
+
+.main__title--detail {
+    max-width: 745px;
 }
 
 .breadcrumbs ul li:not(:last-child)::after {
@@ -1965,6 +1970,299 @@
     position: relative;
 }
 
+.detail {
+    margin-bottom: 81px;
+}
+
+.detail__information {
+    padding: 50px 0;
+    border-top: 1px solid #D1D5DB;
+    border-bottom: 1px solid #D1D5DB;
+}
+
+.detail__promotion {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1F2937;
+    max-width: 746px;
+}
+
+.detail__promotion p {
+    margin-bottom: 30px;
+}
+
+.detail__promotion ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.detail__promotion ul li {
+    list-style-type: disc;
+}
+
+.detail__swiper {
+    max-height: 642px;
+    width: 100%;
+    max-width: 745px;
+    margin-bottom: 110px;
+}
+
+.detail-swiper2 {
+    max-height: 560px;
+    margin-bottom: 10px;
+}
+
+.detail-swiper {
+    height: 73px;
+    box-sizing: border-box;
+}
+
+.detail-swiper2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    min-height: 260px;
+}
+
+.detail-swiper2 .swiper-slide {
+    cursor: pointer;
+}
+
+.detail-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail__flex {
+    display: grid;
+    grid-template-columns: 2fr 1.1fr;
+    gap: 135px;
+}
+
+.detail__swiper__link__container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 110px;
+}
+
+.detail__swiper__link {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1F2937;
+    background: #FCD34D;
+    border-radius: 7px;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    gap: 12px;
+}
+
+.detail__swiper__link::after {
+    content: '';
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/svg/arrow_detail.svg);
+    background-size: 7px 14px;
+    width: 7px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    right: 23px;
+}
+
+.detail__buy {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/svg/ruble_detail.svg);
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.detail__exchange {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/svg/refresh_detail.svg);
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.detail__test {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/svg/wheel_detail.svg);
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.detail__field__name {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6B7280;
+}
+
+.detail__price {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    color: #1F2937;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.detail__credit {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1F2937;
+    margin-bottom: 19px;
+    display: block;
+}
+
+.detail__description__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.detail__description {
+    margin-bottom: 19px;
+}
+
+.detail__field__value {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 200%;
+    color: #1F2937;
+}
+
+.detail__info {
+    background: #EFF6FF;
+    border: 1px solid #E8EAED;
+    border-radius: 9px;
+    padding: 30px;
+    margin-top: 19px;
+    max-width: 425px;
+}
+
+.detail__showroom {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    color: #1F2937;
+}
+
+.detail__address {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1F2937;
+}
+
+.submit__application {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F2937;
+    padding: 17px 20px;
+    width: 100%;
+    background: #FCD34D;
+    border-radius: 7px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.detail__swiper__link__mobile {
+    display: none;
+}
+
+.swiper-button-next-detail::after {
+    content: '';
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 15px 30px;
+    background-image: url(../img/svg/slide_btn.svg);
+    display: block;
+    width: 15px;
+    height: 30px;
+    transform: rotate(180deg);
+}
+
+.swiper-button-prev-detail::after {
+    content: '';
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 15px 30px;
+    background-image: url(../img/svg/slide_btn.svg);
+    display: block;
+    width: 15px;
+    height: 30px;
+}
+
+.detail-swiper2>.swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    bottom: 13px;
+}
+
+.detail-swiper2 .swiper-pagination-bullet {
+    background: #FFFFFF;
+    opacity: 0.5;
+    border-radius: 1px;
+    width: 100%;
+    max-width: 50px;
+    height: 2px;
+}
+
+.detail-swiper2 .swiper-pagination-bullet-active {
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 1px;
+    width: 100%;
+    max-width: 50px;
+    height: 2px;
+}
+
 @media(max-width: 1700px) {
     .hero__content {
         right: 1%;
@@ -1984,7 +2282,7 @@
         background-position: 35%;
     }
 
-    .catalog-swiper  .swiper-pagination-bullet-active::after {
+    .catalog-swiper .swiper-pagination-bullet-active::after {
         height: 2px;
     }
 
@@ -1994,6 +2292,10 @@
 }
 
 @media(max-width: 1200px) {
+
+    .detail__flex {
+        gap: 40px;
+    }
 
     .footer__container {
         grid-template-columns: 0.3fr 2fr 0.8fr;
@@ -2101,6 +2403,35 @@
 }
 
 @media(max-width: 1000px) {
+    .detail__description {
+        max-width: 600px;
+    }
+
+    .detail__description__row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detail__swiper__link__container {
+        display: none;
+    }
+
+    .detail-swiper {
+        display: none;
+    }
+
+    .detail__swiper {
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+
+    .main__title--detail {
+        max-width: 100%;
+    }
+
+    .detail__flex {
+       grid-template-columns: 1fr;
+       gap: 20px;
+    }
 
     .banks__container {
         grid-template-columns: repeat(4, 1fr);
@@ -2180,6 +2511,18 @@
 }
 
 @media(max-width: 768px) {
+
+    .main__title--detail {
+        font-size: 36px;
+        line-height: 43px;
+        margin-bottom: 13px;
+    }
+
+    .detail__price {
+        font-size: 30px;
+        line-height: 43px;
+        margin-bottom: 20px;
+    }
 
     .dropdown__menu {
         padding: 29px 15px;
@@ -2287,6 +2630,10 @@
 
 @media(max-width: 600px) {
 
+    .detail__info {
+        max-width: 100%;
+    }
+
     .select__catalog {
         max-width: 100%;
     }
@@ -2371,6 +2718,11 @@
 
 @media(max-width: 374px) {
 
+    .discount__content h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
     .brand__list {
         grid-template-columns: 1fr;
     }
@@ -2382,5 +2734,10 @@
 
     .header__confirm__city {
         padding: 16px 13px 20px;
+    }
+
+    .detail-swiper2 img {
+        height: 100%;
+        object-fit: cover;
     }
 }
