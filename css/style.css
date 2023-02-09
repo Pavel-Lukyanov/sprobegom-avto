@@ -286,6 +286,10 @@
     transition: 0.3s;
 }
 
+.header__nav ul li a:hover {
+    color: var(--yellow);
+}
+
 .header__btn--menu {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -563,6 +567,12 @@
     display: flex;
     align-items: center;
     gap: 11px;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.brand__link:hover {
+    color: var(--yellow);
 }
 
 .mercedes-benz::before {
@@ -685,6 +695,11 @@
     border: 1px solid #E8EAED;
     border-radius: 9px;
     box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.why__item:hover {
+    background: #c8ddf5;
 }
 
 .why__item svg {
@@ -1050,6 +1065,10 @@
     color: var(--yellow);
 }
 
+.filter {
+    margin-bottom: 60px;
+}
+
 .select {
     background: #EFF6FF;
     border: 1px solid #BFDBFE;
@@ -1201,7 +1220,6 @@
 
 .select__label {
     cursor: pointer;
-    transition: 0.3s;
     user-select: none;
     display: block;
 }
@@ -1319,6 +1337,7 @@
 
 .main__title--detail {
     max-width: 745px;
+    
 }
 
 .breadcrumbs ul li:not(:last-child)::after {
@@ -1346,7 +1365,7 @@
     line-height: 19px;
     color: #4B5563;
     padding-left: 20px;
-    cursor: pointer;
+    cursor: text;
     padding-top: 16px;
 }
 
@@ -1370,6 +1389,7 @@
 .price__item {
     position: relative;
     width: 50%;
+    cursor: text;
 }
 
 .price__placeholder {
@@ -1379,7 +1399,7 @@
     font-size: 16px;
     line-height: 19px;
     color: #4B5563;
-    cursor: pointer;
+    cursor: text;
     position: absolute;
     left: 20px;
     top: 0;
@@ -1448,6 +1468,11 @@
     font-size: 16px;
     line-height: 130%;
     color: var(--whiteF6);
+    transition: 0.3s;
+}
+
+.footer__list li a:hover {
+    color: var(--yellow);
 }
 
 .footer__phone {
@@ -1709,7 +1734,7 @@
     transform: rotate(180deg);
 }
 
-.select__discount.active>.select__discount__dropdown{
+.select__discount.active>.select__discount__dropdown {
     visibility: visible;
     opacity: 1;
 }
@@ -1743,7 +1768,6 @@
 }
 
 .select__discount__label {
-    transition: 0.3s;
     cursor: pointer;
     width: 100%;
     display: block;
@@ -1785,7 +1809,6 @@
     user-select: none;
     width: 100%;
     box-sizing: border-box;
-    transition: 0.3s;
     display: block;
 }
 
@@ -2151,6 +2174,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+.detail-swiper .swiper-slide {
+    cursor: pointer;
 }
 
 .detail__flex {

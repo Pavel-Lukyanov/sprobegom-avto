@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 el.parentNode.parentNode.previousSibling.previousSibling.childNodes[3].textContent = el.textContent.trim();
                 el.parentNode.parentNode.previousSibling.previousSibling.childNodes[1].classList.add('active');
                 el.parentNode.parentNode.parentNode.classList.add('color');
+                el.parentNode.parentNode.parentNode.classList.remove('active');
             })
         })
     }
@@ -155,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selectCatalogLinks.forEach(el => {
             el.addEventListener('click', () => {
                 selectCatalogHead.textContent = el.textContent;
+                selectCatalog.classList.remove('active');
             })
         })
     }
