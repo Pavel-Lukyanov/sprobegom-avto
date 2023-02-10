@@ -253,13 +253,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function swiperInit() {
         let swipers = document.querySelectorAll(`[data-start = "catalog-swiper"]`);
 
-        swipers.forEach(el => {
-            let swip = new Swiper(el, {
+        if (!swipers.length) return;
+        swipers.forEach((el, ind) => {
+            const newClass = `cars__swiper_${ind + 1}`
+            el.classList.add(newClass);
+
+            let swip = new Swiper(`.${newClass}`, {
                 direction: 'horizontal',
                 preloadImages: false,
                 lazy: true,
                 pagination: {
-                    el: '.swiper-pagination-custom',
+                    el: '.' + newClass + ' .swiper-pagination-custom',
                     clickable: true,
                 },
                 on: {
@@ -268,19 +272,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                 },
             });
+
+
+            const bullets = el.querySelectorAll('.swiper-pagination-bullet')
+            if (bullets.length > 0) bullets.forEach(bullet => {
+                const aria = bullet.getAttribute('aria-label')
+                const nextSlide = aria[aria.length - 1]
+                bullet.addEventListener('mouseover', () => { swip.slideTo(nextSlide-1) })
+            })
         })
+
+
     }
 
     swiperInit();
-
-
-    let paginationSwiper = document.querySelectorAll('.swiper-pagination-bullet');
-
-    paginationSwiper.forEach(el => {
-        el.addEventListener('mouseover', () => {
-            el.click();
-        })
-    })
 
 
     // Свайпер на детальной
