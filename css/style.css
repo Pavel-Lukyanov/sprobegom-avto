@@ -557,6 +557,18 @@
     width: fit-content;
 }
 
+.brand__item--invisible {
+    display: none;
+}
+
+.js-brand__list-hidden.active>.brand__item--invisible {
+    display: grid;
+}
+
+.showMoreMarks {
+    display: none;
+}
+
 .brand__link {
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -654,10 +666,16 @@
     font-size: 16px;
     line-height: 19px;
     color: #2563EB;
-    display: flex;
+    display: none;
     align-items: center;
     cursor: pointer;
     gap: 7px;
+    transition: 0.3s;
+    justify-content: center;
+}
+
+.brand__more.active::after {
+    transform: rotate(180deg);
 }
 
 .brand__more::after {
@@ -943,6 +961,11 @@
     line-height: 17px;
     color: var(--gray);
     border-bottom: 1px solid;
+    transition: 0.3s;
+}
+
+.form__checkbox label a:hover {
+    border-bottom: none;
 }
 
 .form__checkbox label {
@@ -1337,7 +1360,7 @@
 
 .main__title--detail {
     max-width: 745px;
-    
+
 }
 
 .breadcrumbs ul li:not(:last-child)::after {
@@ -1571,6 +1594,11 @@
     line-height: 130%;
     color: var(--grayAF);
     border-bottom: 1px solid var(--grayAF);
+    transition: 0.3s;
+}
+
+.footer__politics:hover {
+    border-bottom: none;
 }
 
 .catalog__count {
@@ -1897,6 +1925,7 @@
 }
 
 .catalog-swiper {
+    display: block;
     position: relative;
     height: 290px;
     width: 100%;
@@ -2069,6 +2098,7 @@
     border-radius: 1px;
     opacity: 0.7;
     z-index: -99;
+    cursor: pointer;
 }
 
 .catalog-swiper .swiper-pagination-bullet-active {
@@ -2702,13 +2732,20 @@
     }
 
     .header__phone {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .header__phone::after {
+        content: '';
         background-color: transparent;
         background-repeat: no-repeat;
         background-image: url(../img/svg/phone.svg);
         background-size: 24px;
         width: 24px;
         height: 24px;
-        font-size: 0;
     }
 
     .hero__cards {
@@ -2770,6 +2807,10 @@
 }
 
 @media(max-width: 600px) {
+
+    .header__container {
+        gap: 10px;
+    }
 
     .swiper-button-prev-detail::after {
         background-size: 11px 22px;
@@ -2866,6 +2907,13 @@
 
     .brand__link {
         gap: 5px;
+    }
+}
+
+
+@media(max-width: 400px) {
+    .header__phone::after {
+        display: none;
     }
 }
 

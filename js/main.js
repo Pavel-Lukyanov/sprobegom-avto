@@ -49,6 +49,55 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+
+
+    //Скрытие лишних марок машин на главной
+    let marksList = document.querySelector('.js-brand__list-hidden');
+    if (marksList) {
+        let marksItems = marksList.querySelectorAll('.brand__item');
+
+        let countShowMarks = 23; //Кол-во машин
+        let showMoreMarks = marksList.querySelector('.js-brand__more');
+
+        function invisibleMarks(count) {
+            for (let i = count; i < marksItems.length; i++) {
+                marksItems[i].classList.add('brand__item--invisible');
+            }
+        }
+
+        function invisibleMarksCount() {
+            if (window.innerWidth > 600) {
+                if (marksItems.length > countShowMarks) {
+                    showMoreMarks.style.display = 'flex';
+                    invisibleMarks(countShowMarks);
+                }
+            } else {
+                if (marksItems.length > 5) {
+                    showMoreMarks.style.display = 'flex';
+                    invisibleMarks(5);
+                }
+            }
+        }
+
+        invisibleMarksCount();
+
+        showMoreMarks.addEventListener('click', () => {
+            if (showMoreMarks.textContent.trim() === 'Показать все') {
+                showMoreMarks.textContent = 'Скрыть';
+                showMoreMarks.classList.add('active');
+                marksItems.forEach(el => {
+                    el.classList.remove('brand__item--invisible');
+                })
+            } else {
+                showMoreMarks.textContent = 'Показать все';
+                showMoreMarks.classList.remove('active');
+                invisibleMarksCount();
+            }
+        })
+    }
+
+
+
     //Бургер меню
     let buttonBurger = document.querySelector('.header__btn--menu');
     let header = document.querySelector('.header');
