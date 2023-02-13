@@ -1190,6 +1190,17 @@
     z-index: 48;
 }
 
+.select__kpp.color {
+    background-color: rgba(255, 251, 235, 1);
+    border: 1px solid var(--yellow);
+}
+
+.select__kpp.color>.kpp__container {
+    background-color: rgba(255, 251, 235, 1);
+    border: 1px solid var(--yellow);
+    border-top: none;
+}
+
 .kpp__header {
     font-weight: 500;
     font-size: 16px;
@@ -1254,6 +1265,46 @@
     border-bottom-right-radius: 0px;
 }
 
+.kpp__container>li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kpp__input+.kpp__checkbox__span:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    content: '';
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-color: transparent;
+    background-image: url(../img/svg/checked.svg);
+    height: 10px;
+    width: 14px;
+    z-index: 10000;
+}
+
+.kpp__input:checked+.kpp__checkbox__span:before {
+    opacity: 1;
+}
+
+.kpp__input {
+    display: none;
+}
+
+.kpp__label.color {
+    color: #2563EB;
+}
+
+.kpp__input:checked+.kpp__label {
+    color: #2563EB;
+}
+
 .select__kpp.active.select__kpp::after {
     transform: rotate(180deg);
 }
@@ -1269,14 +1320,7 @@
     width: 100%;
     display: block;
     box-sizing: border-box;
-}
-
-.kpp__input {
-    display: none;
-}
-
-.kpp__input:checked+.kpp__label {
-    color: #2563EB;
+    user-select: none;
 }
 
 .kpp__label:hover {

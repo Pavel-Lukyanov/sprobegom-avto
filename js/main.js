@@ -229,7 +229,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
 
-        //Подстановка в заголовок
+        //Меняем цвет селекта и лейбла при чекнутом инпуте
+        let inputs = Array.from(selectKpp.querySelectorAll('.kpp__input'));
+        inputs.forEach(el => {
+            el.addEventListener('click', () => {
+                const label = el.parentNode.querySelector(`.kpp__label`);
+                if(el.checked) {
+                    label.classList.add('color');
+                } else {
+                    label.classList.remove('color');
+                }
+
+                inputs.some(input => input.checked) ? selectKpp.classList.add('color') : selectKpp.classList.remove('color')
+            })
+        })
+        
     }
 
 
