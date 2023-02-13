@@ -213,37 +213,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Селект КПП
 
-    let selectKpp = document.querySelector('.select__kpp');
-    if (selectKpp) {
-        selectKpp.addEventListener('click', (e) => {
-            if (e.target.classList.contains('select__kpp') || e.target.classList.contains('kpp__title') || e.target.classList.contains('kpp__header')) {
-                selectKpp.classList.toggle('active');
-            }
-        })
-
-        //Закрытие селекта при клике вне него
-        document.addEventListener('click', (e) => {
-            const withinCatalogSelect = e.composedPath().includes(selectKpp);
-            if (!withinCatalogSelect) {
-                selectKpp.classList.remove('active');
-            }
-        })
-
-        //Меняем цвет селекта и лейбла при чекнутом инпуте
-        let inputs = Array.from(selectKpp.querySelectorAll('.kpp__input'));
-        inputs.forEach(el => {
-            el.addEventListener('click', () => {
-                const label = el.parentNode.querySelector(`.kpp__label`);
-                if(el.checked) {
-                    label.classList.add('color');
-                } else {
-                    label.classList.remove('color');
+    let selectKpp = document.querySelectorAll('.select__kpp');
+    if (selectKpp.length > 0) {
+        selectKpp.forEach(select => {
+            select.addEventListener('click', (e) => {
+                if (e.target.classList.contains('select__kpp') || e.target.classList.contains('kpp__title') || e.target.classList.contains('kpp__header')) {
+                    select.classList.toggle('active');
                 }
+            })
 
-                inputs.some(input => input.checked) ? selectKpp.classList.add('color') : selectKpp.classList.remove('color')
+            //Закрытие селекта при клике вне него
+            document.addEventListener('click', (e) => {
+                const withinCatalogSelect = e.composedPath().includes(select);
+                if (!withinCatalogSelect) {
+                    select.classList.remove('active');
+                }
+            })
+
+            //Меняем цвет селекта и лейбла при чекнутом инпуте
+            let inputs = Array.from(select.querySelectorAll('.kpp__input'));
+            inputs.forEach(el => {
+                el.addEventListener('click', () => {
+                    const label = el.parentNode.querySelector(`.kpp__label`);
+                    if (el.checked) {
+                        label.classList.add('color');
+                    } else {
+                        label.classList.remove('color');
+                    }
+
+                    //Красим селект в желтый, если 1 инпут чекнут
+                    inputs.some(input => input.checked) ? select.classList.add('color') : select.classList.remove('color');
+
+
+                    //Подстановка названия в заголовок инпута
+                    let headKppSelect = select.querySelector('.kpp__header');
+                    let countChecked = select.querySelectorAll('input[type=Checkbox]:checked');
+
+                    if (countChecked.length == 1) {
+                        headKppSelect.textContent = countChecked[0].nextElementSibling.nextElementSibling.textContent;
+                    } else if (countChecked.length > 1) {
+                        headKppSelect.textContent = `КПП: ${countChecked.length}`;
+                    } else {
+                        headKppSelect.textContent = 'КПП';
+                    }
+                })
             })
         })
-        
     }
 
 

@@ -1373,6 +1373,7 @@
     color: #6B7280;
     cursor: pointer;
     transition: 0.3s;
+    user-select: none;
 }
 
 .filter__reset:hover {
