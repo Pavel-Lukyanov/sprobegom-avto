@@ -1100,7 +1100,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 303px;
     cursor: pointer;
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -1119,24 +1118,13 @@
     opacity: 0;
     visibility: hidden;
     max-height: 0;
-    display: flex;
-    flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
     transition: 0.3s;
-}
-
-.filter__hidden>.select {
-    z-index: 48;
-}
-
-.filter__hidden>.select__years {
-    z-index: 48;
 }
 
 .selects__container.active>.filter__hidden {
     opacity: 1;
-    max-height: fit-content;
+    max-height: 200px;
     visibility: visible;
 }
 
@@ -1175,7 +1163,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 303px;
     cursor: pointer;
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -1263,6 +1250,7 @@
 .select__kpp.active {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    z-index: 60;
 }
 
 .kpp__container>li {
@@ -1419,6 +1407,7 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom: 1px solid #BFDBFE;
+    z-index: 60;
 }
 
 .select__active {
@@ -1518,8 +1507,8 @@
 }
 
 .selects__container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin-bottom: 25px;
     transition: 0.5s;
@@ -1546,7 +1535,6 @@
 .price__container {
     display: flex;
     width: 100%;
-    max-width: 303px;
     border: 1px solid #BFDBFE;
     background-color: #EFF6FF;
     border-radius: 7px;
@@ -1555,7 +1543,6 @@
 
 .select__years {
     width: 100%;
-    max-width: 305px;
     display: flex;
     position: relative;
 }
@@ -2746,6 +2733,13 @@
     }
 }
 
+@media(max-width: 1300px) {
+    .selects__container {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+}
+
 @media(max-width: 1200px) {
 
     .detail__flex {
@@ -2858,6 +2852,11 @@
 }
 
 @media(max-width: 1000px) {
+
+    .selects__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .detail__description {
         max-width: 600px;
     }
@@ -3091,6 +3090,22 @@
 }
 
 @media(max-width: 600px) {
+
+    .filter__reset {
+        justify-content: flex-end;
+    }
+
+    .filter__submit {
+        padding: 20px;
+    }
+
+    .filter__controls {
+        flex-direction: column;
+    }
+
+    .selects__container {
+        grid-template-columns: 1fr;
+    }
 
     .header__container {
         gap: 10px;

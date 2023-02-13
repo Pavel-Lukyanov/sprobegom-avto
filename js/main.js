@@ -156,10 +156,17 @@ document.addEventListener('DOMContentLoaded', function () {
         let labels = document.querySelectorAll('.select__label');
         labels.forEach(el => {
             el.addEventListener('click', function () {
-                el.parentNode.parentNode.previousSibling.previousSibling.childNodes[3].textContent = el.textContent.trim();
-                el.parentNode.parentNode.previousSibling.previousSibling.childNodes[1].classList.add('active');
-                el.parentNode.parentNode.parentNode.classList.add('color');
-                el.parentNode.parentNode.parentNode.classList.remove('active');
+                if (el.textContent.trim() === 'Город' || el.textContent.trim() === 'Топливо') {
+                    el.parentNode.parentNode.parentNode.classList.remove('color');
+                    el.parentNode.parentNode.parentNode.classList.remove('active');
+                    el.parentNode.parentNode.previousSibling.previousSibling.childNodes[3].textContent = '';
+                    el.parentNode.parentNode.previousSibling.previousSibling.childNodes[1].classList.remove('active');
+                } else {
+                    el.parentNode.parentNode.previousSibling.previousSibling.childNodes[3].textContent = el.textContent.trim();
+                    el.parentNode.parentNode.previousSibling.previousSibling.childNodes[1].classList.add('active');
+                    el.parentNode.parentNode.parentNode.classList.add('color');
+                    el.parentNode.parentNode.parentNode.classList.remove('active');
+                }
             })
         })
     }
@@ -243,7 +250,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     //Красим селект в желтый, если 1 инпут чекнут
                     inputs.some(input => input.checked) ? select.classList.add('color') : select.classList.remove('color');
-
 
                     //Подстановка названия в заголовок инпута
                     let headKppSelect = select.querySelector('.kpp__header');
