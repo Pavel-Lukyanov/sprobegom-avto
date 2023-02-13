@@ -1967,7 +1967,7 @@
 }
 
 .anim__button.active>.span__anim {
-    animation: ripple 0.8s  normal;
+    animation: ripple 0.8s normal;
 }
 
 .select__discount {
@@ -2292,6 +2292,16 @@
     display: block;
 }
 
+.title--catalog {
+    font-family: 'Gilroy', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #6B7280;
+    margin-bottom: 19px;
+}
+
 .catalog__descr {
     font-family: 'Gilroy', sans-serif;
     font-style: normal;
@@ -2510,6 +2520,7 @@
     width: 100%;
     position: relative;
     gap: 12px;
+    box-sizing: border-box;
 }
 
 .detail__swiper__link::after {
@@ -2852,6 +2863,14 @@
 
 @media(max-width: 1000px) {
 
+    .detail__swiper__link__mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 488px;
+        box-sizing: border-box;
+    }
+
     .selects__container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -3089,6 +3108,10 @@
 }
 
 @media(max-width: 600px) {
+
+    .detail__swiper__link__mobile {
+        max-width: 100%;
+    }
 
     .filter__reset {
         justify-content: flex-end;
