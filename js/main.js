@@ -390,4 +390,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
+
+    //Анимация кнопок
+
 })
+
+
+
+
