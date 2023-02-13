@@ -392,8 +392,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    //Анимация кнопок
+    // Анимация кнопки
+    const animateBtns = document.querySelectorAll('.anim__button');
 
+    animateBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function (e) {
+            const parentOffset = btn.getBoundingClientRect(),
+                relX = e.clientX - parentOffset.left,
+                relY = e.clientY - parentOffset.top;
+
+            const span = btn.querySelector('.span__anim');
+            span.style.top = relY + 'px';
+            span.style.left = relX + 'px';
+            btn.classList.add('active');
+
+        });
+
+        btn.addEventListener('mouseleave', function (e) {
+            setTimeout(() => {
+                btn.classList.remove('active');
+            }, 700)
+        })
+    })
 })
 
 

@@ -1941,11 +1941,10 @@
     overflow: hidden;
 }
 
-.anim__button::before {
-    content: '';
+.anim__button>.span__anim {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0%;
+    left: 0%;
     width: 5px;
     height: 5px;
     background: rgba(255, 255, 255, .5);
@@ -1967,8 +1966,8 @@
     }
 }
 
-.anim__button:focus:not(:active)::before {
-    animation: ripple 1s ease-in-out;
+.anim__button.active>.span__anim {
+    animation: ripple 0.8s  normal;
 }
 
 .select__discount {
