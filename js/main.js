@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (selects.length > 0) {
         selects.forEach(el => {
             el.addEventListener('click', function (e) {
-                if (e.target.classList.contains('select__title') || e.target.classList.contains('select__header')) {
+                if (e.target.classList.contains('select__title') || e.target.classList.contains('select__header') || e.target.classList.contains('select__active')) {
                     el.classList.toggle('active');
                 }
             })
@@ -211,6 +211,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    //Селект КПП
+
+    let selectKpp = document.querySelector('.select__kpp');
+    if (selectKpp) {
+        selectKpp.addEventListener('click', (e) => {
+            if (e.target.classList.contains('select__kpp') || e.target.classList.contains('kpp__title') || e.target.classList.contains('kpp__header')) {
+                selectKpp.classList.toggle('active');
+            }
+        })
+
+        //Закрытие селекта при клике вне него
+        document.addEventListener('click', (e) => {
+            const withinCatalogSelect = e.composedPath().includes(selectKpp);
+            if (!withinCatalogSelect) {
+                selectKpp.classList.remove('active');
+            }
+        })
+
+        //Подстановка в заголовок
+    }
+
+
     // Селект в футере
     let selectCity = document.querySelector('.select__discount');
 
@@ -278,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (bullets.length > 0) bullets.forEach(bullet => {
                 const aria = bullet.getAttribute('aria-label')
                 const nextSlide = aria[aria.length - 1]
-                bullet.addEventListener('mouseover', () => { swip.slideTo(nextSlide-1) })
+                bullet.addEventListener('mouseover', () => { swip.slideTo(nextSlide - 1) })
             })
         })
 
@@ -317,4 +339,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     } catch { }
 
+
+    //Открытие фильтра
+    let extendFilterBtn = document.querySelector('.extended__btn');
+
+    if (extendFilterBtn) {
+        let filterContainer = document.querySelector('.selects__container');
+        extendFilterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterContainer.classList.toggle('active');
+            if (extendFilterBtn.textContent.trim() === 'Расширенный фильтр') {
+                extendFilterBtn.textContent = 'Скрыть фильтр';
+            } else {
+                extendFilterBtn.textContent = 'Расширенный фильтр';
+            }
+        })
+    }
 })
