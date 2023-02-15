@@ -1056,6 +1056,11 @@
     font-size: 16px;
     line-height: 19px;
     color: var(--black);
+    transition: 0.3s;
+}
+
+.popup__list li a:hover {
+    color: var(--yellow);
 }
 
 .popup__list {
@@ -2216,6 +2221,14 @@
 .catalog__item {
     position: relative;
     border-radius: 13px;
+}
+
+.catalog__title  {
+    transition: 0.3s;
+}
+
+.catalog__item:hover .catalog__title  {
+color: #2563EB;
 }
 
 .catalog__label__container {
