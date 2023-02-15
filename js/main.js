@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Скрытие лишних марок машин на главной
     let marksList = document.querySelector('.js-brand__list-hidden');
+    let marksTitile = document.getElementById('scrollTo');
+
     if (marksList) {
         let marksItems = marksList.querySelectorAll('.brand__item');
 
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 showMoreMarks.textContent = 'Показать все';
                 showMoreMarks.classList.remove('active');
                 invisibleMarksCount();
+                marksTitile.scrollIntoView({behavior: 'smooth', block: 'start'});
             }
         })
     }
