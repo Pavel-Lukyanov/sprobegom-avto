@@ -414,8 +414,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 700)
         })
     })
+
+
+
+
 })
-
-
 
 
