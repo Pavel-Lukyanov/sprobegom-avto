@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let acceptCityContainer = document.querySelector('.js-accept-city');
     let acceptCity = acceptCityContainer.querySelector('.header__city__accept');
     let denyCity = acceptCityContainer.querySelector('.header__city__deny');
+    let selectCityMenu = document.querySelector('.select__city__menu');
 
+    selectCityMenu.addEventListener('click', () => {
+        header.classList.remove('active');
+        acceptCityContainer.classList.remove('zindex');
+        selectCityPopup.classList.add('active');
+    })
 
     acceptCity.addEventListener('click', function () {
         acceptCityContainer.classList.remove('active');
